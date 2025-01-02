@@ -1,7 +1,0 @@
-<form bindsubmit="formSubmit">
-    <text bindtap="cascadePopup" class="area_select"></text>
-	<input name="detail" placeholder="详情地址" value="" />
-	<input name="realname" placeholder="收件人姓名" value="" />
-	<input name="mobile" placeholder="手机号码" value="" type="number"/>
-	<button formType="submit" type="primary">保存</button>
-</form>
