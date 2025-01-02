@@ -1,0 +1,57 @@
+/**index.wxss**/
+.scroll-wrapper {
+}
+.scroll-view-item {
+  padding: 1rem 10px;
+  display: flex;
+  border-bottom: 1px solid #e6e8eb;
+}
+.item-img {
+  height: 5rem;
+  flex: 2;
+  display: block;
+}
+.detail {
+  height: 5rem;
+  line-height: 1.1em;
+  flex: 5;
+  padding: 0 10px;
+  position: relative;
+}
+.item-name {
+  font-size: .7rem;
+  top: 0;
+}
+.tips {
+  font-size: .60rem;
+
+  bottom: 0;
+  color: #828a92;
+}
+.item-info {
+  float: left;
+}
+.category {
+  float: left;
+}
+.sting{
+  float: left;
+  width: 100%;
+   text-align: right;
+  color: #ba1413;
+}
+.item-more {
+  font-size: .7rem;
+
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+   margin-bottom: 30px;
+  
+}
+.page{
+   text-align: center;
+  display: inline;
+  float:right;
+  margin-right:10px;
+}

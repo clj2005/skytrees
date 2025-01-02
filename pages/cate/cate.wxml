@@ -1,0 +1,13 @@
+<image src="../../res/img/banner.png" style="width: 100%; margin: 20px auto;" mode="widthFix" />
+<view class="container">
+ 
+	<view class="index-menu">
+		<navigator class="index-menu-item" wx:for="{{indexmenu}}" wx:key="{{item.url}}" url="{{item.url}}" >
+			<image src="{{item.icon}}"></image>
+			<text>{{item.text}}</text>
+		</navigator>
+	</view>
+</view>
+ 
+    
+  

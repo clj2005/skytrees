@@ -1,0 +1,16 @@
+
+<import src="../../wxParse/wxParse.wxml"/> 
+ 
+ <view class="container log-list">
+  <text style="font-weight:bold">{{news.title}}</text>
+</view>
+
+
+
+<view class="index-menu" wx:if="{{news.ext1 && news.catid==5}}" style="margin-bottom:20px">
+<video src='{{news.ext1}}' style='width:100%;margin:0px 10px;'  ></video>
+</view>
+<view class="wxParse" style='padding:0px 10px;'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+

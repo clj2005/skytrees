@@ -1,0 +1,50 @@
+/**index.wxss**/
+.scroll-wrapper {
+}
+.scroll-view-item {
+  padding: 1rem 10px;
+  display: flex;
+  border-bottom: 1px solid #e6e8eb;
+}
+.item-img {
+  height: 4rem;
+  flex: 1;
+  display: block;
+}
+.detail {
+  height: 4rem;
+  line-height: 1.1em;
+  flex: 2;
+  padding: 0 10px;
+  position: relative;
+}
+.item-name {
+  font-size: .7rem;
+  top: 0;
+}
+.tips {
+  font-size: .60rem;
+
+  bottom: 0;
+  color: #828a92;
+}
+.item-info {
+  float: left;
+}
+.category {
+  float: right;
+}
+.item-more {
+  font-size: 0.7em;
+   
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.page{
+   text-align: center;
+  display: inline;
+  float:right;
+  margin-right:10px;
+}

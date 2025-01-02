@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container log-list" style='margin: 0px auto;border-bottom:solid 1px #ccc'>
+  <text style='color:#000;margin: 20px auto;'>唐诗解读</text>
+</view>
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltoupper="upper" 
+    bindscrolltolower="lower" bindscroll="scroll" class="scroll-wrapper">
+    <view class="scroll-view-item" wx:for="{{news}}" data-id="{{item.id}}" catchtap="bindItemTap">
+      <image class="item-img" src="http://www.chengzhangshu9.cn/{{item.thumb_url}}"></image>
+      <view class="detail">
+        <text class="item-name">{{item.title}}</text>
+        <view class="tips">
+          <text class="item-info"></text>
+          <text class="category">{{item.digest}}</text>
+         <text class="sting">点击收听</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="item-more">
+<text bindtap="clickMe" data-testid="{{nextpage}}"  class="page">
+    下一页
+    </text>
+  <text bindtap="clickMe" data-testid="{{prepage}}" wx:if="{{page>1}}" class="page">
+    上一页
+    </text>
+         
+    
+</view>
+ 

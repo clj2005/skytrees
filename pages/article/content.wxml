@@ -1,0 +1,32 @@
+
+<import src="../../wxParse/wxParse.wxml"/> 
+ <image src="{{news.thumb_url}}" wx:if="{{news.catid==1}}" mode="aspectFill" class="slide-image" style="	width: 100%;"/>
+ <view class="container log-list">
+  <text style="font-weight:bold">{{news.title}}</text>
+</view>
+<view class="container log-list" wx:if="{{news.catid==1}}" >
+<text style="font-size:0.8em">有声绘本，请点击正文中的音频文件收听！
+ </text>
+</view>
+<view class="index-menu" wx:if="{{news.ext1 && news.catid==1}}" >
+  <view  style=" float:right;width:90%;margin:10px auto;">
+       
+      <progress   percent="{{percent}}"  stroke-width="2" color="#333" bindtap="progressplay" />
+      
+    </view>
+     <view class="paybtn">
+      <image src="../../res/img/tab/pre.png" style="width: 32px;height:32px;margin-right:20px; " bindtap="mynext" data-testid="{{news.preid}}"  />
+  <image src="../../res/img/tab/tui.png" style="width: 32px;height:32px;margin-right:20px; " bindtap="progressplay" data-testid="1"  />
+  <image src="{{payimg}}" style="width: 32px;height:32px;margin-right:20px; " bindtap="play" data-testid="0"  />
+   <image src="../../res/img/tab/kuai.png" style="width: 32px;height:32px; " bindtap="progressplay" data-testid="2"  />
+   <image src="../../res/img/tab/next.png" style="width: 32px;height:32px;margin-left:20px; " bindtap="mynext" data-testid="{{news.nextid}}"  />
+  </view>
+
+</view>
+<view class="index-menu" wx:if="{{news.ext1 && news.catid==5}}" style="margin-bottom:20px;">
+<video src='{{news.ext1}}' style='width:100%;margin:0px 10px;'  ></video>
+</view>
+<view class="wxParse" style='padding:0px 10px; font-size:0.8em;'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+

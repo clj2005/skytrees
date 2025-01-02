@@ -1,0 +1,39 @@
+
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<view class="container log-list">
+  <text>{{news.title}}</text>
+</view>
+<view class="index-menu" wx:if="{{news.jiage<0 || news.ext1=='ok'}}">
+  <view  style=" float:right;width:90%;margin:10px auto;">
+       
+      <progress   percent="{{percent}}"  stroke-width="2" color="#333" bindtap="progressplay" />
+      
+    </view>
+     <view class="paybtn">
+  <image src="../../res/img/tab/tui.png" style="width: 32px;height:32px;margin-right:20px; " bindtap="progressplay" data-testid="1"  />
+  <image src="{{payimg}}" style="width: 32px;height:32px;margin-right:20px; " bindtap="play" data-testid="0"  />
+   <image src="../../res/img/tab/kuai.png" style="width: 32px;height:32px; " bindtap="progressplay" data-testid="2"  />
+  </view>
+
+</view>
+  <view class="section section_gap" style="text-align:center;display:none" wx:if="{{news.jiage<0 || news.ext1=='ok'}}" >
+      <audio src="{{news.thumb_media_id}}" poster="http://www.chengzhangshu9.cn{{news.thumb_url}}" name="{{news.title}}" author="天空树"  controls></audio>
+    </view>
+
+<view class="wxParse" wx:if="{{news.jiage<0 || news.ext1=='ok'}}">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view class="wxParse" wx:if="{{news.jiage>=0 && news.ext1!='ok'}}" style="height:40px;">
+    此音频是付费音频，请购买后收听。
+    
+</view>
+
+ <view bindtap="Payapi" data-testid="35" wx:if="{{news.jiage>=0 && news.ext1!='ok'}}" style="text-align:center;color:#fff;background:#ea5503;margin-bottom:20px;">
+    打包购买 支付35元
+    </view>
+     
+    <view bindtap="Payapi" data-testid="{{news.jiage}}" wx:if="{{news.jiage>0 && news.ext1!='ok'}}" style="text-align:center;color:#fff;background:#ea5503">
+     购买单个 支付{{news.jiage}}元
+    </view>
+

@@ -1,0 +1,6 @@
+<view class="container">
+<text class="desc">
+	欢迎关注天空树订阅号。
+</text>
+<image src="../../res/img/11761497407837.png" style="width: 70%; margin: 0 auto;" mode="widthFix" />
+</view>

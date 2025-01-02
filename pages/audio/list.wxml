@@ -1,0 +1,39 @@
+<!--index.wxml-->
+
+<view class="container log-list" style='margin: 0px auto;border-bottom:solid 1px #ccc'>
+  <text style='color:#000;margin: 20px auto;'>图书音频-此栏目为会员服务</text>
+</view>
+
+<view class="container">
+ <form bindsubmit="formSubmit">
+ 
+<input name="so" placeholder=" 请输入您购买图书时的下单手机号" value="" style="margin: 20px 10px;width:230px;height:30px;float:left;font-size:14px;border:solid 1px #888"  />
+
+<button formType="submit"  style="border:solid 1px #888;font-size:14px;margin: 20px 10px ;;width:60px;height:30px;LINE-HEIGHT:30PX;float:right" >搜索</button>
+</form>
+  <scroll-view scroll-y="true" bindscrolltoupper="upper" 
+    bindscrolltolower="lower" bindscroll="scroll" class="scroll-wrapper">
+    <view class="scroll-view-item" wx:for="{{news}}" data-id="{{item.id}}" catchtap="bindItemTap">
+      <image class="item-img" src="http://www.chengzhangshu9.cn/{{item.thumb_url}}"></image>
+      <view class="detail">
+        <text class="item-name">{{item.title}}</text>
+        <view class="tips">
+          <text class="item-info"></text>
+          <text class="category">{{item.digest}}</text>
+         <text class="sting">点击收听</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="item-more">
+<text bindtap="clickMe" data-testid="{{nextpage}}"  class="page" style="display:none">
+    下一页
+    </text>
+  <text bindtap="clickMe" data-testid="{{prepage}}" wx:if="{{page>1}}" class="page" style="display:none">
+    上一页
+    </text>
+         
+    
+</view>
+ 
